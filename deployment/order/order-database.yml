@@ -30,14 +30,14 @@ spec:
             - containerPort: 3307
           volumeMounts:
             - mountPath: /etc/mysql/conf.d
-              name:   mysql-config
+              name:   order-mysql-config
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: "1234"
             - name: MYSQL_DATABASE
               value: "order-db"
       volumes:
-        - name: mysql-config
+        - name: order-mysql-config
           configMap:
             name: order-mysql-config
 

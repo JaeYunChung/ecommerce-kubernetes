@@ -29,7 +29,7 @@ spec:
           ports:
             - containerPort: 3307
           volumeMounts:
-            - name: mysql-config
+            - name: category-mysql-config
               mountPath: /etc/mysql/conf.d
           env:
             - name: MYSQL_ROOT_PASSWORD
@@ -37,6 +37,6 @@ spec:
             - name: MYSQL_DATABASE
               value: "category-db"
       volumes:
-        - name: mysql-config
+        - name: category-mysql-config
           configMap:
             name: category-mysql-config
